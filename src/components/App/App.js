@@ -1,20 +1,23 @@
 import "./App.css";
 import {
-  BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
 import Home from "../Home/Home"
+import ReadingPage from '../ReadingPage/ReadingPage';
 import React from 'react';
 
 const App = () => {
   return (
-  <Router>
+    <div className='app'>
+    <main className='main-section'>
       <Switch>
-        <Route path="/"  render={ () =>  <Home />}/>
-        <Route render={() => <h1>Page not found</h1>} />
+        <Route exact path="/astro-reader"  render={ () =>  <Home />}/>
+        <Route exact path="/astro-reader/reading/:currentZodiac" render={ ({ match }) => <ReadingPage currentZodiac={match.params.currentZodiac}/>}/>
+        <Route path="*" render={() => <h1>ERROR</h1>}/>
       </Switch>
-  </Router>
+    </main>
+    </div>
   )
 }
 
