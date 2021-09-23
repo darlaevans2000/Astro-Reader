@@ -6,6 +6,7 @@ import {
 import Home from "../Home/Home"
 import Header from "../Header/Header"
 import ReadingPage from '../ReadingPage/ReadingPage';
+import SavedPage from '../SavedPage/SavedPage';
 import React from 'react';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Switch>
         <Route exact path="/astro-reader"  render={ () =>  <Home />}/>
         <Route exact path="/astro-reader/reading/:currentZodiac" render={ ({ match }) => <ReadingPage currentZodiac={match.params.currentZodiac}/>}/>
+        <Route exact path="/astro-reader/saved" render={ () => <SavedPage />}/>
         <Route path="*" render={() => <h1>ERROR</h1>}/>
       </Switch>
     </main>
