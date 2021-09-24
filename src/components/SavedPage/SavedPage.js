@@ -19,8 +19,9 @@ class SavedPage extends Component {
     render() {
         const readingCards = this.state.savedReadings.map((reading) => {
         return(
-            <div className="reading-card">
+            <div className="reading-card" key={reading.current_date}>
                 Date Saved: {reading.current_date}
+                Description: {reading.description}
             </div>
         )
         });
