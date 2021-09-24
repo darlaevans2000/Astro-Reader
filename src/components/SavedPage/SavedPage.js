@@ -9,17 +9,11 @@ class SavedPage extends Component {
     }
 
         componentDidMount() {
-         let userSaved = JSON.parse(localStorage.getItem('savedData'));
-
-        if (localStorage.getItem('savedData')) {
-            this.setState({
-                savedReadings: [userSaved],
-            })
-        } else {
-            this.setState({
-                savedReadings:[],
-            })
-        }
+        let values = Object.keys(localStorage);
+        return values.forEach((value) => {
+        let localStorageObject = localStorage.getItem(`${value}`);
+        this.state.savedReadings.push(localStorageObject)
+        })
     }
 
 
