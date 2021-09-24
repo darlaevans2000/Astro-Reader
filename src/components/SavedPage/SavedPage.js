@@ -12,14 +12,15 @@ class SavedPage extends Component {
         let values = Object.keys(localStorage);
         return values.forEach((value) => {
         let localStorageObject = localStorage.getItem(`${value}`);
-        this.state.savedReadings.push(JSON.parse(localStorageObject))
+        let newObject = JSON.parse(localStorageObject)
+        this.state.savedReadings.push(newObject)
         })
     }
 
     render() {
         const readingCards = this.state.savedReadings.map((reading) => {
         return(
-            <div className="reading-card" key={reading.current_date}>
+            <div className="reading-card" key={Date.now()}>
                 Date Saved: {reading.current_date}
                 Description: {reading.description}
             </div>

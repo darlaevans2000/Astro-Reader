@@ -11,7 +11,7 @@ class ReadingPage extends Component {
     }
 
     componentDidMount () {
-        const URL = 'https://aztro.sameerkumar.website/?sign=aries&day=today';
+        const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=today`;
         fetch(URL, {
             method: 'POST'
         }).then(response => response.json())
@@ -29,7 +29,7 @@ class ReadingPage extends Component {
               Date Range: {this.state.responseReading.date_range} <br />
               Mood: {this.state.responseReading.mood} <br />
               Description: {this.state.responseReading.description} <br />
-              <button onClick={() => {localStorage.setItem(`${this.state.responseReading.current_date}`, JSON.stringify(this.state.responseReading));}}>Save Reading</button>
+              <button onClick={() => {localStorage.setItem(`${(Date.now())}`, JSON.stringify(this.state.responseReading))}}>Save Reading</button>
           </div>
         );
     }
