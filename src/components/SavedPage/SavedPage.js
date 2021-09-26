@@ -1,35 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import SavedCard from '../SavedCard/SavedCard'
 
-class SavedPage extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-          savedReadings: []
-        }
-    }
 
-        componentDidMount() {
-        let values = Object.keys(localStorage);
-        return values.forEach((value) => {
-        let localStorageObject = localStorage.getItem(`${value}`);
-        let newObject = JSON.parse(localStorageObject)
-        this.state.savedReadings.push(newObject)
-        })
-    }
+export const SavedPage = () => {
+const [savedCards, setSavedCards] = useState([])
 
-    render() {
-        const readingCards = this.state.savedReadings.map((reading) => {
-        return(
-            <div className="reading-card" key={Date.now()}>
-                Date Saved: {reading.current_date}
-                Description: {reading.description}
-            </div>
-        )
-        });
-        return <div className="saved-area">
-            {readingCards}
-        </div>
-    }
+const getFromLocalStorage = () => {
+  const keys = Object.keys(localStorage)
+  let cards;
+  if (keys.length) {
+    cards = keys.map(key => {
+      return JSON.parse(localStorage.getItem(key))
+    })
+    setSavedCards([...cards])
+  }
 }
 
-export default SavedPage;
+
+useEffect(() => {
+  getFromLocalStorage()
+}, [])
+
+
+    
+ const cards = savedCards.map((card) => (<SavedCard card={card}/>));
+
+  return (
+    <>
+    {!cards.length && <h2 className='no-saved'>No readings saved yet.</h2>}
+    <section className='card-container'>{cards}</section>
+    </>
+  );
+}
+
+export default SavedPage

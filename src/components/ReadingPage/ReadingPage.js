@@ -29,7 +29,7 @@ class ReadingPage extends Component {
               Date Range: {this.state.responseReading.date_range} <br />
               Mood: {this.state.responseReading.mood} <br />
               Description: {this.state.responseReading.description} <br />
-              <button onClick={() => {localStorage.setItem(`${(Date.now())}`, JSON.stringify(this.state.responseReading))}}>Save Reading</button>
+              <button onClick={() => {localStorage.setItem(`${this.state.currentZodiac}`, JSON.stringify(this.state.responseReading))}}>Save Reading</button>
           </div>
         );
     }
