@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import {
+  Link
+} from 'react-router-dom';
 
 class YesterdaysReading extends Component {
   constructor(props) {
@@ -23,6 +26,7 @@ class YesterdaysReading extends Component {
   render() {
     return (
       <div>
+        <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}><button>Todays reading</button></Link><br/>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
