@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   Link
 } from 'react-router-dom';
+import "./TomorrowsReading.css";
 
 class TomorrowsReading extends Component {
   constructor(props) {
@@ -26,8 +27,8 @@ class TomorrowsReading extends Component {
   render() {
     return (
       <div>
-        <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}><button>Todays reading</button></Link><br/>
-        <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button>Yesterdays reading</button></Link><br/>
+        <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}><button className='today-btn'>← Todays reading</button></Link> <br />
+        <section className='reading-card'>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
@@ -47,6 +48,7 @@ class TomorrowsReading extends Component {
         >
           Save Reading
         </button>
+        </section>
       </div>
     );
   }
