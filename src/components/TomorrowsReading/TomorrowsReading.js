@@ -3,7 +3,7 @@ import {
   Link
 } from 'react-router-dom';
 
-class YesterdaysReading extends Component {
+class TomorrowsReading extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ class YesterdaysReading extends Component {
   }
 
   componentDidMount() {
-    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=yesterday`;
+    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=tomorrow`;
     fetch(URL, {
       method: "POST",
     })
@@ -27,7 +27,7 @@ class YesterdaysReading extends Component {
     return (
       <div>
         <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}><button>Todays reading</button></Link><br/>
-        <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button>Tomorrows reading</button></Link><br/>
+        <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button>Yesterdays reading</button></Link><br/>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
@@ -52,4 +52,4 @@ class YesterdaysReading extends Component {
   }
 }
 
-export default YesterdaysReading;
+export default TomorrowsReading;
