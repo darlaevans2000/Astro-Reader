@@ -28,6 +28,7 @@ class ReadingPage extends Component {
     return (
       <div>
          <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button>Yesterdays Reading</button></Link><br/>
+         <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button>Tomorrows Reading</button></Link><br/>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
