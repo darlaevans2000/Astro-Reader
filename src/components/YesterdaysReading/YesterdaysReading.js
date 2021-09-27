@@ -8,7 +8,7 @@ class YesterdaysReading extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      responseReading: {},
+      responseReading: null,
       currentZodiac: props.currentZodiac,
     };
   }
@@ -25,6 +25,9 @@ class YesterdaysReading extends Component {
   }
 
   render() {
+    if (this.state.responseReading === null) {
+      return <div className="loading">Loading...</div>
+    }
     return (
       <div>
         <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}><button className="today-btn1">Todays reading →</button></Link><br/>

@@ -6,6 +6,10 @@ section {
   font-size: 25px;
 }
 
+.loading {
+  font-size: 70px;
+}
+
 .reading-card {
     padding-top: 5vh;
 }
