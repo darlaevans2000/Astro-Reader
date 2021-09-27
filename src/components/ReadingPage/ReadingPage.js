@@ -8,7 +8,7 @@ class ReadingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      responseReading: {},
+      responseReading: null,
       currentZodiac: props.currentZodiac,
     };
   }
@@ -25,18 +25,22 @@ class ReadingPage extends Component {
   }
 
   render() {
+    if (this.state.responseReading === null) {
+      return <div className="loading">Loading...</div>
+    }
     return (
       <div>
-         <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button>Yesterdays Reading</button></Link><br/>
-         <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button>Tomorrows Reading</button></Link><br/>
-        Current Date: {this.state.responseReading.current_date} <br />
-        Compatibility: {this.state.responseReading.compatibility} <br />
+         <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button className="yesterday-btn">←Yesterdays Reading</button></Link>
+         <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button className="tomorrow-btn">Tomorrows Reading→</button></Link><br/>
+        <section className='reading-card'>
+        Date: {this.state.responseReading.current_date} <br />
+        Description: {this.state.responseReading.description} <br />
+        Sign Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
         Lucky Time: {this.state.responseReading.lucky_time} <br />
         Color: {this.state.responseReading.color} <br />
         Date Range: {this.state.responseReading.date_range} <br />
         Mood: {this.state.responseReading.mood} <br />
-        Description: {this.state.responseReading.description} <br />
         <button
           onClick={() => {
             localStorage.setItem(
@@ -48,6 +52,7 @@ class ReadingPage extends Component {
         >
           Save Reading
         </button>
+        </section>
       </div>
     );
   }

@@ -1,0 +1,13 @@
+div {
+    color: white;
+}
+
+.reading-card {
+    padding-top: 5vh;
+}
+
+.today-btn {
+  position: absolute;
+  right: 60%;
+  transform: translateX(-100%);
+}
