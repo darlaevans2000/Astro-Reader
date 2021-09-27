@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Home from "../Home/Home"
 import Header from "../Header/Header"
+import YesterdaysReading from '../YesterdaysReading/YesterdaysReading';
 import ReadingPage from '../ReadingPage/ReadingPage';
 import SavedPage from '../SavedPage/SavedPage';
 import React from 'react';
@@ -16,7 +17,8 @@ const App = () => {
     <main className='main-section'>
       <Switch>
         <Route exact path="/astro-reader"  render={ () =>  <Home />}/>
-        <Route exact path="/astro-reader/reading/:currentZodiac" render={ ({ match }) => <ReadingPage currentZodiac={match.params.currentZodiac}/>}/>
+        <Route exact path="/astro-reader/reading/today/:currentZodiac" render={ ({ match }) => <ReadingPage currentZodiac={match.params.currentZodiac}/>}/>
+        <Route exact path="/astro-reader/reading/yesterday/:currentZodiac" render={ ({ match }) => <YesterdaysReading currentZodiac={match.params.currentZodiac}/>}/>
         <Route exact path="/astro-reader/saved" render={ () => <SavedPage />}/>
         <Route path="*" render={() => <h1>ERROR</h1>}/>
       </Switch>
