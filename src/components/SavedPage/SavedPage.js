@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SavedCard from "../SavedCard/SavedCard";
+import "./SavedPage.css";
 
 export const SavedPage = () => {
   const [savedCards, setSavedCards] = useState([]);

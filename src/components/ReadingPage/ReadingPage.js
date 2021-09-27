@@ -30,14 +30,14 @@ class ReadingPage extends Component {
          <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button className="yesterday-btn">←Yesterdays Reading</button></Link>
          <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button className="tomorrow-btn">Tomorrows Reading→</button></Link><br/>
         <section className='reading-card'>
-        Current Date: {this.state.responseReading.current_date} <br />
-        Compatibility: {this.state.responseReading.compatibility} <br />
+        Date: {this.state.responseReading.current_date} <br />
+        Description: {this.state.responseReading.description} <br />
+        Sign Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
         Lucky Time: {this.state.responseReading.lucky_time} <br />
         Color: {this.state.responseReading.color} <br />
         Date Range: {this.state.responseReading.date_range} <br />
         Mood: {this.state.responseReading.mood} <br />
-        Description: {this.state.responseReading.description} <br />
         <button
           onClick={() => {
             localStorage.setItem(
