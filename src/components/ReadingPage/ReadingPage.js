@@ -27,8 +27,9 @@ class ReadingPage extends Component {
   render() {
     return (
       <div>
-         <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button>Yesterdays Reading</button></Link><br/>
-         <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button>Tomorrows Reading</button></Link><br/>
+         <Link to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}><button className="yesterday-btn">←Yesterdays Reading</button></Link>
+         <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}><button className="tomorrow-btn">Tomorrows Reading→</button></Link><br/>
+        <section className='reading-card'>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
@@ -48,6 +49,7 @@ class ReadingPage extends Component {
         >
           Save Reading
         </button>
+        </section>
       </div>
     );
   }

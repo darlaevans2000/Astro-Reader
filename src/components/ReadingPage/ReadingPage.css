@@ -1,3 +1,19 @@
 div {
     color: white;
 }
+
+.reading-card {
+    padding-top: 5vh;
+}
+
+.yesterday-btn{
+  position: absolute;
+  right: 50%;
+  transform: translateX(-100%);
+}
+
+.tomorrow-btn {
+  position: absolute;
+  left: 0%;
+  transform: translateX(-100%);
+}
