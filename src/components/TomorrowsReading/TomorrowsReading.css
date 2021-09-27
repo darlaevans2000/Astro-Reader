@@ -6,7 +6,7 @@ div {
     padding-top: 5vh;
 }
 
-.today-btn{
+.today-btn {
   position: absolute;
   right: 60%;
   transform: translateX(-100%);
