@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import {
-  Link
-} from 'react-router-dom';
-import "./ReadingPage.css";
 
-class ReadingPage extends Component {
+class YesterdaysReading extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +10,7 @@ class ReadingPage extends Component {
   }
 
   componentDidMount() {
-    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=today`;
+    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=yesterday`;
     fetch(URL, {
       method: "POST",
     })
@@ -27,7 +23,6 @@ class ReadingPage extends Component {
   render() {
     return (
       <div>
-         <Link to={'/astro-reader/reading/yesterday/leo'}><button>Yesterdays Reading</button></Link>
         Current Date: {this.state.responseReading.current_date} <br />
         Compatibility: {this.state.responseReading.compatibility} <br />
         Lucky Number: {this.state.responseReading.lucky_number} <br />
@@ -52,4 +47,4 @@ class ReadingPage extends Component {
   }
 }
 
-export default ReadingPage;
+export default YesterdaysReading;
