@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import today from '../fixtures/today.json';
+import tomorrow from '../fixtures/tomorrow.json';
+import yesterday from '../fixtures/yesterday.json';
+
+const baseURL = 'https://aztro.sameerkumar.website/?sign=aries&day='
+
+Cypress.Commands.add('loadTodayAries', () => {
+  cy.intercept(`${baseURL}today`, today)
+    .visit('http://localhost:3000/astro-reader/reading/today/aries')
+});
+
+Cypress.Commands.add('loadTomorrowAries', () => {
+  cy.intercept(`${baseURL}tomorrow`, tomorrow)
+    .visit('http://localhost:3000/astro-reader/reading/tomorrow/aries')
+});
+
+Cypress.Commands.add('loadYesterdayAries', () => {
+  cy.intercept(`${baseURL}yesterday`, yesterday)
+    .visit('http://localhost:3000/astro-reader/reading/yesterday/aries')
+});
