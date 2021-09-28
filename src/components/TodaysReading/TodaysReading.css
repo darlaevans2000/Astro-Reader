@@ -9,11 +9,6 @@ section {
 .loading {
   font-size: 70px;
 }
-
-.reading-card {
-  padding-top: 5vh;
-}
-
 .yesterday-btn {
   position: absolute;
   right: 50%;
