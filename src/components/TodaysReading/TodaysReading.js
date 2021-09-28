@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Reading from "../Reading/Reading"
-import "./TomorrowsReading.css";
+import "./TodaysReading.css";
 
-class TomorrowsReading extends Component {
+class TodaysReading extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ class TomorrowsReading extends Component {
   }
 
   componentDidMount() {
-    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=tomorrow`;
+    const URL = `https://aztro.sameerkumar.website/?sign=${this.state.currentZodiac}&day=today`;
     fetch(URL, {
       method: "POST",
     })
@@ -30,9 +30,14 @@ class TomorrowsReading extends Component {
     }
     return (
       <div>
-        <Link to={`/astro-reader/reading/today/${this.state.currentZodiac}`}>
-          <button className="today-btn">← Todays reading</button>
-        </Link>{" "}
+        <Link
+          to={`/astro-reader/reading/yesterday/${this.state.currentZodiac}`}
+        >
+          <button className="yesterday-btn">←Yesterdays Reading</button>
+        </Link>
+        <Link to={`/astro-reader/reading/tomorrow/${this.state.currentZodiac}`}>
+          <button className="tomorrow-btn">Tomorrows Reading→</button>
+        </Link>
         <br />
         <Reading reading={this.state.responseReading} />
       </div>
@@ -40,7 +45,7 @@ class TomorrowsReading extends Component {
   }
 }
 
-export default TomorrowsReading;
-TomorrowsReading.propTypes = {
+export default TodaysReading;
+TodaysReading.propTypes = {
   currentZodiac: PropTypes.string
 }

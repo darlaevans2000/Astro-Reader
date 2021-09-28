@@ -1,5 +1,5 @@
 div {
-    color: white;
+  color: white;
 }
 
 section {
@@ -9,12 +9,7 @@ section {
 .loading {
   font-size: 70px;
 }
-
-.reading-card {
-    padding-top: 5vh;
-}
-
-.yesterday-btn{
+.yesterday-btn {
   position: absolute;
   right: 50%;
   transform: translateX(-100%);

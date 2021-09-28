@@ -28,7 +28,7 @@ export const SavedPage = () => {
   }, []);
 
   const cards = savedCards.map((card) => (
-    <SavedCard card={card} remove={removeFromStorage} />
+    <SavedCard card={card} remove={removeFromStorage} key={card.lucky_number + card.lucky_time}/>
   ));
 
   return (

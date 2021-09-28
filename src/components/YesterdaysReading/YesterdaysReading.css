@@ -1,12 +1,12 @@
 div {
-    color: white;
+  color: white;
 }
 
 .reading-card {
-    padding-top: 5vh;
+  padding-top: 5vh;
 }
 
-.today-btn1{
+.today-btn1 {
   position: absolute;
   right: 5%;
   transform: translateX(-100%);
