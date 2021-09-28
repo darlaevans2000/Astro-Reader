@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import "./YesterdaysReading.css";
 
 class YesterdaysReading extends Component {
@@ -60,3 +61,6 @@ class YesterdaysReading extends Component {
 }
 
 export default YesterdaysReading;
+YesterdaysReading.propTypes = {
+  currentZodiac: PropTypes.string
+}

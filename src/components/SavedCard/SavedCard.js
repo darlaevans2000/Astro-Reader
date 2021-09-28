@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const SavedCard = ({ card, remove }) => {
   return (
     <section className="saved-card">
@@ -20,3 +21,7 @@ export const SavedCard = ({ card, remove }) => {
 };
 
 export default SavedCard;
+SavedCard.propTypes = {
+  card: PropTypes.object, 
+  remove: PropTypes.func
+}

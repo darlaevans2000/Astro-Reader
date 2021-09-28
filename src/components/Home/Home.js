@@ -3,18 +3,9 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      error: "",
-    };
-  }
-
   render() {
     return (
       <section className="home-page">
-        {this.state.error && <h2>500 Error!</h2>}
-        {!this.state.error && (
           <div className="grid-container">
             <Link to={"/astro-reader/reading/today/aries"}>
               <section className="card">
@@ -101,7 +92,6 @@ class Home extends Component {
               </section>
             </Link>
           </div>
-        )}
       </section>
     );
   }
