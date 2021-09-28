@@ -34,14 +34,16 @@ describe('Show todays reading', () => {
   });
 
   describe('Save a Reading & Saved Reading Page', () => {
-        
-    it('Should be able to save a reading', () => {
-        cy.get('.save-btn').click()
-    });
 
-    it('Should be able to see saved readings', () => {
+    it('Should be able to save a reading and see saved readings', () => {
+        cy.get('.save-btn').click()
         cy.get('.saved-cards').click()
         cy.get('.saved-card').should('be.visible').should('contain', "Date: September 28, 2021")
+    });
+
+    it('Should be able to go home by clicking on header', () => {
+        cy.get('h1').click()
+        .url().should('eq', 'http://localhost:3000/astro-reader')
     });
 
   });

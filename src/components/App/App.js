@@ -17,7 +17,7 @@ const App = () => {
       <Header />
     <main className='main-section'>
       <Switch>
-        <Route exact path="/astro-reader"  render={ () =>  <Home />}/>
+        <Route exact path="/astro-reader/"  render={ () =>  <Home />}/>
         <Route exact path="/astro-reader/reading/today/:currentZodiac" render={ ({ match }) => <ReadingPage currentZodiac={match.params.currentZodiac}/>}/>
         <Route exact path="/astro-reader/reading/yesterday/:currentZodiac" render={ ({ match }) => <YesterdaysReading currentZodiac={match.params.currentZodiac}/>}/>
         <Route exact path="/astro-reader/reading/tomorrow/:currentZodiac" render={ ({ match }) => <TomorrowsReading currentZodiac={match.params.currentZodiac}/>}/>
