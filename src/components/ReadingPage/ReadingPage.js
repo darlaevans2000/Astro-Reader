@@ -41,7 +41,7 @@ class ReadingPage extends Component {
         Color: {this.state.responseReading.color} <br />
         Date Range: {this.state.responseReading.date_range} <br />
         Mood: {this.state.responseReading.mood} <br />
-        <button
+        <button className="save-btn"
           onClick={() => {
             localStorage.setItem(
               this.state.responseReading.lucky_number +
