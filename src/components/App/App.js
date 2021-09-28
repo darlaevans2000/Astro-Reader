@@ -22,7 +22,7 @@ const App = () => {
         <Route exact path="/astro-reader/reading/yesterday/:currentZodiac" render={ ({ match }) => <YesterdaysReading currentZodiac={match.params.currentZodiac}/>}/>
         <Route exact path="/astro-reader/reading/tomorrow/:currentZodiac" render={ ({ match }) => <TomorrowsReading currentZodiac={match.params.currentZodiac}/>}/>
         <Route exact path="/astro-reader/saved" render={ () => <SavedPage />}/>
-        <Route path="*" render={() => <h1>ERROR</h1>}/>
+        <Route path="*" render={() => <h1>Uh oh ~ You've ran into an error. Click the page title to go back home.</h1>}/>
       </Switch>
     </main>
     </div>
