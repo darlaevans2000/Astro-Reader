@@ -51,7 +51,7 @@ Users can click the 'Save Reading' button to save a reading. This reading will b
 ---
 
 ## Technologies
-React, React Router, Cypress, JSON, HTML5, CSS
+React, React Router, Cypress, JSON, HTML5, CSS, API
 ## Authors
 <table display: inline;>
     <tr>
