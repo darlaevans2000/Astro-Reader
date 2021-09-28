@@ -43,7 +43,7 @@ describe('Show todays reading', () => {
 
     it('Should be able to go home by clicking on header', () => {
         cy.get('h1').click()
-        .url().should('eq', 'http://localhost:3000/astro-reader')
+        .url().should('eq', 'http://localhost:3000/')
     });
 
   });

@@ -1,6 +1,6 @@
 describe('User Home Page Flow', () => {
     beforeEach(() => {
-    cy.visit('http://localhost:3000/astro-reader')
+    cy.visit('http://localhost:3000/')
   });
 
   describe('Home Page', () => {
@@ -17,7 +17,7 @@ describe('User Home Page Flow', () => {
         cy.get('.card')
             .first().click()
             .url().should('eq', 'http://localhost:3000/astro-reader/reading/today/aries')
-            .url().should('not.eq', 'http://localhost:3000/astro-reader');
+            .url().should('not.eq', 'http://localhost:3000/');
     })
   });
 });
