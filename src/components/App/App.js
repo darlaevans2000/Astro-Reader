@@ -4,7 +4,7 @@ import Home from "../Home/Home";
 import Header from "../Header/Header";
 import YesterdaysReading from "../YesterdaysReading/YesterdaysReading";
 import TomorrowsReading from "../TomorrowsReading/TomorrowsReading";
-import ReadingPage from "../ReadingPage/ReadingPage";
+import TodaysReading from "../TodaysReading/TodaysReading";
 import SavedPage from "../SavedPage/SavedPage";
 import React from "react";
 
@@ -19,7 +19,7 @@ const App = () => {
             exact
             path="/astro-reader/reading/today/:currentZodiac"
             render={({ match }) => (
-              <ReadingPage currentZodiac={match.params.currentZodiac} />
+              <TodaysReading currentZodiac={match.params.currentZodiac} />
             )}
           />
           <Route
